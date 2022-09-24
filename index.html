@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+     <!--My Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+    <!--QR code js library-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    
+<header class="p-4 mb-10 container-fluid">
+
+    <div class="container mw-100 mx-auto">
+        <div class="display-6 text-light">QR Code Generator</div>
+    </div>
+
+
+  
+
+</header>
+
+<main>
+    <!--div  class="row d-md-flex justify-content-center align-self-center m-auto flex-md-row">
+    -->  
+    <div class="row flex-column-reverse flex-lg-row p-5">
+               <div class="mw-100 col-md-8">
+            <h1 class="fs-2 fw-bold mb-5">
+                QR Code Generator
+            </h1>
+            <p class="mb-4">
+                QR Codes allow smartphones users to access your website simply and quickly.
+            </p>
+            <p>
+                Enter your URL below to generate a QR Code and download the image.
+            </p>
+            <form id="generate-form" class="mt-4">
+                <input type="url"
+                 class="w-75 border border-secondary 
+                 rounded text-secondary
+                  me-5 mb-5"
+                id="url" 
+                placeholder="Enter a URL"
+                >
+                <select  id="size"
+                class="w-75 border border-secondary 
+                 rounded text-secondary
+                  me-5"
+                
+                >
+            <option value="100">100x100</option>
+            <option value="200">200x200</option>
+            <option value="300" selected>300x300</option>
+            <option value="400">400x400</option>
+            <option value="500">500x500</option>
+            <option value="600">600x600</option>
+            <option value="700">700x700</option>
+            </select>
+
+             <button class="btn btn-secondary py-3 px-4
+             mt-5">
+                Generate QR Code 
+            </button>
+
+            </form>
+        </div>
+        <div class="mw-100 col-md-4">
+        <img src="img/qr-img-1.png" alt="" class="w-50 mx-auto mb-10 w-md-100">
+        </div>
+    <div>
+
+
+
+        <!--Generated QR Code-->
+        <div
+        id="generated" 
+        class="container m-auto d-flex flex-column text-center
+        align-content-center justify-content-center mt-5
+         ">
+        
+        <!--Spinner-->
+        <div id="spinner" role="status">
+            <svg id="loading-spinner" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                <g fill="none">
+                  <path id="track" fill="#C6CCD2" d="M24,48 C10.745166,48 0,37.254834 0,24 C0,10.745166 10.745166,0 24,0 C37.254834,0 48,10.745166 48,24 C48,37.254834 37.254834,48 24,48 Z M24,44 C35.045695,44 44,35.045695 44,24 C44,12.954305 35.045695,4 24,4 C12.954305,4 4,12.954305 4,24 C4,35.045695 12.954305,44 24,44 Z"/>
+                  <path id="section" fill="#3F4850" d="M24,0 C37.254834,0 48,10.745166 48,24 L44,24 C44,12.954305 35.045695,4 24,4 L24,0 Z"/>
+                </g>
+              </svg>
+            <span class="sr-only">Loading...</span>
+          </div>
+
+
+        <!--QR Code Output-->
+        <div id="qrcode" class="m-auto"></div>
+        </div>
+
+</main>
+
+  
+
+<script src="js/script.js"></script>
+</body>
+</html>
